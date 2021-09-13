@@ -1,0 +1,9 @@
+<div>
+    <input type="number"
+           #temp>
+    <button (click)="convertToF(temp.valueAsNumber)">Convert to F</button>
+    <button (click)="convertToC(temp.valueAsNumber)">Convert to C</button>
+    <div>
+        <span>The Converted Temperature is {{ convertedTemp }}</span>
+    </div>
+</div>
