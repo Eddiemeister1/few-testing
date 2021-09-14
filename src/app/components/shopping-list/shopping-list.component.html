@@ -1,11 +1,3 @@
-<div class="card">
-    <div class="card-header">
-        <span>Beer</span>
-    </div>
-    <div class="card-body">
-        Get this at <span>Giant Eagle</span>
-    </div>
-    <div class="card-footer">
-        stuff
-    </div>
-</div>
+<ng-container *ngFor="let item of items$ | async">
+    <app-shopping-list-item [item]="item"></app-shopping-list-item>
+</ng-container>

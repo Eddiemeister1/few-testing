@@ -1,0 +1,17 @@
+<div class="card">
+    <div class="card-header">
+        <span data-shopping-list-item-description>{{item.description}}</span>
+    </div>
+    <div class="card-body">
+        Get this at <span data-shopping-list-item-store>{{(item.store | json) || 'Unknown'}}</span>
+    </div>
+    <div class="card-footer"
+         data-shopping-list-item-purchased
+         *ngIf="!item.purchased">
+        <div>
+            <button (click)="markPurchased(item)"
+                    class="btn btn-danger"
+                    data-shopping-list-item-purchase-button>Purchase</button>
+        </div>
+    </div>
+</div>
