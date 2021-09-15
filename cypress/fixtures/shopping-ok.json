@@ -1,0 +1,22 @@
+{
+    "data": [
+        {
+            "id": "1",
+            "description": "Shampoo",
+            "store": "1",
+            "purchased": false
+        },
+        {
+            "id": "2",
+            "description": "Tortillas",
+            "purchased": true,
+            "store": "2"
+        },
+        {
+            "id": "3",
+            "description": "Taco Sauce",
+            "purchased": true
+        }
+    ],
+    "numberOfItems": 3
+}

@@ -21,7 +21,7 @@ export class ShoppingListDataService {
     getShoppingList(): Observable<ShoppingEntity[]> {
         return this.client.get<GetShoppingResponse>(this.baseUrl + '/shopping-items')
             .pipe(
-                map(response => [])
+                map(response => response.data)
             )
     }
 }

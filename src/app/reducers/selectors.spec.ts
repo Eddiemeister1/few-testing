@@ -12,6 +12,9 @@ describe('The Selector Functions', () => {
             shoppingList: {
                 ids: ['1'],
                 entities: { 1: { id: '1', description: 'bread', purchased: true, store: '1' } }
+            },
+            app: {
+                hasError: false
             }
         }
 
@@ -48,6 +51,9 @@ describe('The Selector Functions', () => {
                         1: { id: '1', description: 'bread', purchased: true, store: '1' },
                         2: { id: '2', description: 'beer', purchased: false, store: '' }
                     }
+                },
+                app: {
+                    hasError: false
                 }
             }
             const expected: ShoppingListItemModel[] = [

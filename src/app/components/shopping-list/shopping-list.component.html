@@ -1,3 +1,4 @@
-<ng-container *ngFor="let item of items$ | async">
+<div data-shopping-list
+     *ngFor="let item of items$ | async">
     <app-shopping-list-item [item]="item"></app-shopping-list-item>
-</ng-container>
+</div>

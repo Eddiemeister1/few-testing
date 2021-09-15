@@ -22,6 +22,7 @@ import { ShoppingItemsEffects } from './effects/shopping-items.effects';
 import { StoresDataService } from './services/stores-data.service';
 import { ShoppingListDataService } from './services/shopping-list-data.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ErrorDisplayComponent } from './components/error-display/error-display.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +32,8 @@ import { HttpClientModule } from '@angular/common/http';
     ShoppingComponent,
     ShoppingListComponent,
     ShoppingEntryComponent,
-    ShoppingListItemComponent
+    ShoppingListItemComponent,
+    ErrorDisplayComponent
   ],
   imports: [
     BrowserModule,

@@ -2,7 +2,9 @@ import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { ShoppingListDataService } from "../services/shopping-list-data.service";
 import * as actions from '../actions/shopping-list.actions';
-import { map, mergeMap, tap } from "rxjs/operators";
+import { catchError, map, mergeMap, tap } from "rxjs/operators";
+import { of } from "rxjs";
+import { applicationError } from "../actions/app.actions";
 
 @Injectable()
 export class ShoppingItemsEffects {
@@ -22,7 +24,8 @@ export class ShoppingItemsEffects {
             ofType(actions.loadShoppingList),
             mergeMap(() => this.service.getShoppingList()
                 .pipe(
-                    map(payload => actions.loadShoppingListSucceeded({ payload }))
+                    map(payload => actions.loadShoppingListSucceeded({ payload })),
+                    catchError(err => of(applicationError({ source: 'Shopping', message: 'Cannot Load Shopping List' })))
                 )
             )
         )
