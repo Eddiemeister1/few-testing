@@ -21,7 +21,7 @@ import { StoresEffects } from './effects/stores.effects';
 import { ShoppingItemsEffects } from './effects/shopping-items.effects';
 import { StoresDataService } from './services/stores-data.service';
 import { ShoppingListDataService } from './services/shopping-list-data.service';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +35,7 @@ import { ShoppingListDataService } from './services/shopping-list-data.service';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
     StoreModule.forRoot(reducers),

@@ -3,13 +3,7 @@ import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { ShoppingListItemModel } from "src/app/models";
 import { ShoppingListItemComponent } from "./shopping-list-item.component";
 
-
-
 describe('ShoppingListItemComponent', () => {
-
-
-
-
 
     describe('Unpurchased Item With No Store', () => {
         let testHostFixture: ComponentFixture<UnpurchasedTestHostComponent>;

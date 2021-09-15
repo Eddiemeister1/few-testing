@@ -1,20 +1,32 @@
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable, of } from "rxjs";
+import { map } from "rxjs/operators";
+import { environment } from "src/environments/environment";
 import { ShoppingEntity } from "../reducers/shopping-list.reducer";
-
 
 
 
 @Injectable()
 export class ShoppingListDataService {
 
+    readonly baseUrl = environment.apiUrl;
 
+    constructor(private client: HttpClient) { }
+
+    markItemAsPurchased(item: ShoppingEntity) {
+        return this.client.post(this.baseUrl + '/shopping-items/purchased', { item });
+    }
 
     getShoppingList(): Observable<ShoppingEntity[]> {
-        return of([
-            { id: '1', description: 'Beer', purchased: false },
-            { id: '2', description: 'Chips', purchased: true },
-            { id: '3', description: 'Shampoo', purchased: false, store: '1' }
-        ])
+        return this.client.get<GetShoppingResponse>(this.baseUrl + '/shopping-items')
+            .pipe(
+                map(response => [])
+            )
     }
+}
+
+interface GetShoppingResponse {
+    data: ShoppingEntity[],
+
 }
